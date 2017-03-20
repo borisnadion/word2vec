@@ -1,8 +1,8 @@
+import sys
 from gensim.models import KeyedVectors
-import pdb
+# import pdb
 import numpy
 from xmlrpc.server import SimpleXMLRPCServer
-import sys
 import time
 
 if len(sys.argv) < 2:
@@ -23,7 +23,7 @@ def find_weights(vocabulary_inv, num_features, miss_min, miss_max):
     res = []
     unknown_indexes = []
     print("Finding weights, vocabulary length={0}, missed randomized with {1}..{2}".format(len(vocabulary_inv), miss_min, miss_max))
-    for i, w in enumrate(vocabulary_inv):
+    for i, w in enumerate(vocabulary_inv):
         if w in model.vocab:
             res.append(model[w][0:num_features].tolist())
         else:
