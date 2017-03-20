@@ -22,7 +22,7 @@ def find_weights(vocabulary_inv, num_features, miss_min, miss_max):
     unknowns = []
     res = []
     unknown_indexes = []
-    puts("Finding weights, vocabulary length={0}, missed randomized with {1}..{2}".format(len(vocabulary_inv), miss_min, miss_max))
+    print("Finding weights, vocabulary length={0}, missed randomized with {1}..{2}".format(len(vocabulary_inv), miss_min, miss_max))
     for i, w in enumrate(vocabulary_inv):
         if w in model.vocab:
             res.append(model[w][0:num_features].tolist())
